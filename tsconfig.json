@@ -1,0 +1,32 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es6",
+        "outDir": "out",
+        "lib": [
+            "es6",
+            "dom" /* for webview contents */
+        ],
+        "sourceMap": true,
+        "rootDir": "src",
+        "typeRoots": [
+            "src/typings", 
+            "node_modules/@types"
+        ],
+        /* Strict Type-Checking Option */
+        "strict": true,   /* enable all strict type-checking options */
+        "allowJs": true,
+        /* Additional Checks */
+        "noUnusedLocals": true /* Report errors on unused locals. */
+        // "noImplicitReturns": true, /* Report error when not all code paths in function return a value. */
+        // "noFallthroughCasesInSwitch": true, /* Report errors for fallthrough cases in switch statement. */
+        // "noUnusedParameters": true,  /* Report errors on unused parameters. */
+    },
+    "exclude": [
+        "node_modules",
+        ".vscode-test",
+        //"src/typings",
+        "webpack.config.js",
+        "out"
+    ]
+}
