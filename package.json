@@ -2,8 +2,9 @@
     "name": "sqlops-mssql-spatial-preview",
     "displayName": "MSSQL Spatial Preview",
     "description": "SqlOps Studio MSSQL Spatial Preview Extension",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "FlexArts",
+    "repository": "github:flexarts/sqlops-mssql-spatial-preview",
     "engines": {
         "vscode": "^1.29.0",
         "sqlops": "*"
@@ -25,6 +26,7 @@
         ]
     },
     "scripts": {
+        "publish": "vsce package",
         "vscode:prepublish": "npm run compile",
         "compile": "npm run compile-ext && npm run compile-web",
         "compile-ext": "tsc -p ./",

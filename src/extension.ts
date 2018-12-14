@@ -38,7 +38,7 @@ export function activate(context: vscode.ExtensionContext) {
 
     sqlops.dataprotocol.onDidChangeLanguageFlavor(() => {
 
-        vscode.window.showInformationMessage('DidChangeLanguageFlavor_2!');
+        vscode.window.showInformationMessage('Spatial previews are now enabled...');
         let webviewPanels: any = {};
         let queryProviders = sqlops.dataprotocol.getProvidersByType(sqlops.DataProviderType.QueryProvider);
         queryProviders.map((queryProvider: any) => {
@@ -75,7 +75,6 @@ export function activate(context: vscode.ExtensionContext) {
                                 enableScripts: true,
                                 // Only allow the webview to access resources in our extension's media directory
                                 localResourceRoots: [
-                                    vscode.Uri.file(path.join(context.extensionPath, 'src', 'web')),
                                     vscode.Uri.file(path.join(context.extensionPath, 'out', 'web')),
                                 ]
                             }
@@ -86,7 +85,7 @@ export function activate(context: vscode.ExtensionContext) {
                         webviewPanels[ownerUri] = currentPanel;
                     }
                     const webRoot = vscode.Uri.file(path.join(context.extensionPath, 'out', 'web')).with({ scheme: 'vscode-resource' });
-                    const filePath = vscode.Uri.file(path.join(context.extensionPath, 'src', 'web', 'index.html'));
+                    const filePath = vscode.Uri.file(path.join(context.extensionPath, 'out', 'web', 'index.html'));
                     const html = fs.readFileSync(filePath.fsPath, 'utf8');
                     currentPanel.webview.html = html.replace(/{webroot}/g, webRoot.toString());
                     //sqlops.window.modelviewdialog.
