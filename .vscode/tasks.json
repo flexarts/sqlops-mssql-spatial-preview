@@ -4,12 +4,42 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "Watch",
             "type": "npm",
-            "script": "watch",
+            "script": "watch-ext",
             "problemMatcher": "$tsc-watch",
             "isBackground": true,
             "presentation": {
                 "reveal": "never"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Watch_Web",
+            "type": "npm",
+            "script": "watch-web",
+            "problemMatcher": "$tsc-watch",
+            "isBackground": true,
+            "presentation": {
+                "reveal": "never"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Watch",
+            "dependsOn": [
+                "Watch_Ext",
+                "Watch_Web",
+            ],
+            "isBackground": true,
+            "presentation": {
+                "reveal": "always"
             },
             "group": {
                 "kind": "build",

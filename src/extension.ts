@@ -38,7 +38,7 @@ export function activate(context: vscode.ExtensionContext) {
 
     sqlops.dataprotocol.onDidChangeLanguageFlavor(() => {
 
-        vscode.window.showInformationMessage('DidChangeLanguageFlavor_9999!');
+        vscode.window.showInformationMessage('DidChangeLanguageFlavor_2!');
         let webviewPanels: any = {};
         let queryProviders = sqlops.dataprotocol.getProvidersByType(sqlops.DataProviderType.QueryProvider);
         queryProviders.map((queryProvider: any) => {
@@ -85,11 +85,10 @@ export function activate(context: vscode.ExtensionContext) {
                         }, undefined, context.subscriptions);
                         webviewPanels[ownerUri] = currentPanel;
                     }
-                    const jsRoot = vscode.Uri.file(path.join(context.extensionPath, 'out', 'web')).with({ scheme: 'vscode-resource' });
-                    const webRoot = vscode.Uri.file(path.join(context.extensionPath, 'src', 'web')).with({ scheme: 'vscode-resource' });
+                    const webRoot = vscode.Uri.file(path.join(context.extensionPath, 'out', 'web')).with({ scheme: 'vscode-resource' });
                     const filePath = vscode.Uri.file(path.join(context.extensionPath, 'src', 'web', 'index.html'));
                     const html = fs.readFileSync(filePath.fsPath, 'utf8');
-                    currentPanel.webview.html = html.replace('{webroot}', webRoot.toString()).replace('{jsroot}', jsRoot.toString());
+                    currentPanel.webview.html = html.replace(/{webroot}/g, webRoot.toString());
                     //sqlops.window.modelviewdialog.
                     const parsedData = parseData(data.resultSubset.rows, geocolumns);
                     currentPanel.title = `${parsedData.length} Spatial Results [${ownerUri}]`;

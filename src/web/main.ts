@@ -4,13 +4,24 @@ import View from 'ol/View';
 import TileLayer from 'ol/layer/Tile';
 import XYZ from 'ol/source/XYZ';
 
+require('./css/main.scss');
+import 'ol/ol.css';
+
 const infoDiv = document.querySelector('span');
 const rootDiv = document.querySelector('body > div#root');
+const debugDiv = document.querySelector('body > div#debug');
+
 logInfo('TEST By JS');
 
 function logInfo(txt: string) {
     if (infoDiv) {
         infoDiv.textContent = txt;
+    }
+}
+
+function logDebug(txt: string) {
+    if (debugDiv) {
+        debugDiv.textContent = txt;
     }
 }
 
@@ -32,7 +43,7 @@ function initBody() {
         });
         console.log(map);
     } else {
-        logInfo('Error loading openlayers')
+        logInfo('Error loading openlayers');
     }
 }
 
@@ -51,6 +62,7 @@ window.addEventListener('message', event => {
             const { data, geocolumns } = message;
             logInfo(`Query returned ${data.length} rows (${geocolumns.length} spatial columns)`);
             document.title = `${data.length} Spatial Results`;
+            logDebug(`INFO: Query returned ${data.length} rows found`);
             break;
     }
 });

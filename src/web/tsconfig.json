@@ -8,10 +8,10 @@
             "dom" /* for webview contents */
         ],
         "sourceMap": true,
-        "rootDir": "src",
+        "rootDir": ".",
         "typeRoots": [
-            "src/typings", 
-            "node_modules/@types"
+            "../typings", 
+            "../../node_modules/@types"
         ],
         /* Strict Type-Checking Option */
         "strict": true,   /* enable all strict type-checking options */
@@ -24,10 +24,5 @@
     },
     "exclude": [
         "node_modules",
-        ".vscode-test",
-        //"src/typings",
-        "webpack.config.js",
-        "out",
-        "src/web",
     ]
 }

@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src vscode-resource: https:; script-src vscode-resource:; style-src vscode-resource:;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src vscode-resource: https:; script-src vscode-resource:; style-src vscode-resource: https: ;">
     <title>Spatial Results</title>
+    <base href="{webroot}" />
+    <link rel="stylesheet" href="{webroot}/main.css" type="text/css" />
 </head>
 <body>
-    <h2>Spatial Query Preview</h2>
-    <span></span>
+    <h2 class="title">Query Spatial Preview</h2>
+    <span class="subtitle"></span>
     <div id="root"></div>
-    <p>
-        <img src="{webroot}/img/pippi.jpg">
-    </p>
-    <script src="{jsroot}/bundle.js"></script>
+    <div id="debug">test</div>
+    <script src="{webroot}/bundle.js"></script>
 </body>
 </html>
