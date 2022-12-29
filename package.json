@@ -44,7 +44,7 @@
         "copy-webpack-plugin": "4.6.0",
         "css-loader": "2.0.0",
         "mini-css-extract-plugin": "0.5.0",
-        "node-sass": "4.11.0",
+        "node-sass": "7.0.0",
         "sass-loader": "7.1.0",
         "sqlops": "github:anthonydresser/sqlops-extension-sqlops",
         "ts-loader": "5.3.1",
