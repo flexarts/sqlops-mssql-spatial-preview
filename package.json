@@ -41,18 +41,18 @@
         "@types/mocha": "^2.2.42",
         "@types/node": "^7.0.43",
         "@types/ol": "4.6.2",
-        "copy-webpack-plugin": "4.6.0",
-        "css-loader": "2.0.0",
-        "mini-css-extract-plugin": "0.5.0",
+        "copy-webpack-plugin": "11.0.0",
+        "css-loader": "6.7.3",
+        "mini-css-extract-plugin": "2.7.2",
         "node-sass": "4.11.0",
-        "sass-loader": "7.1.0",
+        "sass-loader": "13.2.0",
         "sqlops": "github:anthonydresser/sqlops-extension-sqlops",
-        "ts-loader": "5.3.1",
+        "ts-loader": "9.4.2",
         "tslint": "^5.8.0",
         "typescript": "^2.6.1",
         "vscode": "^1.1.6",
-        "webpack": "^4.26.1",
-        "webpack-cli": "3.1.2"
+        "webpack": "^5.75.0",
+        "webpack-cli": "5.0.1"
     },
     "dependencies": {
         "ol": "5.3.0"
